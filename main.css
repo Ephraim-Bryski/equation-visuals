@@ -80,8 +80,20 @@ body{
 
 .library-label {
     font-weight: bold;
-    padding-top:5px;
+    padding-top:10px;
     padding-bottom: 5px;
+    font-size: large;
+}
+
+
+.command-box {
+    border-width: 1px;
+    padding: 1px;
+    margin: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    
 }
 
 #save-field-error-msg{

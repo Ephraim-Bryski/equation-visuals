@@ -15,7 +15,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "seecalc chrome debug",
-            "file": "c:\\Users\\Ephraim\\GitHub\\seeciv\\see_calc\\see_calc.html",
+            "file": "c:\\Users\\Ephraim\\GitHub\\equation-visuals\\index.html",
 
             "skipFiles": [
                 "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML",
@@ -36,7 +36,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "liro seecalc chrome debug",
-            "file": "C:\\Users\\BryskiE\\OneDrive - LiRo Group\\Documents\\My Documents\\Coding\\seeciv\\see_calc\\see_calc.html",
+            "file": "C:\\Users\\BryskiE\\OneDrive - LiRo Group\\Documents\\My Documents\\Coding\\equation-visuals\\index.html",
 
             "skipFiles": [
                 "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML",
