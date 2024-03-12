@@ -146,7 +146,7 @@ document.addEventListener('keyup', (e)=>{
         remove_those_spinners()
     }
 
-    if (in_field.id = "save-field"){
+    if (in_field.id === "save-field"){
         document.getElementById("save-field-error-msg").innerText = ""
     }
     
@@ -1930,6 +1930,8 @@ document.onmouseup = update_up_press
 let last_spinner_pressed = null
 let n_since_spinner_pressed = null
 
+
+
 setInterval(check_spinner_pressed,1)
 
 
@@ -1937,7 +1939,7 @@ function check_spinner_pressed(){
 
     const just_clicked =    n_since_spinner_pressed === 0
 
-    const held_down = n_since_spinner_pressed > 3
+    const held_down = n_since_spinner_pressed > 30
 
     if (just_clicked || held_down){
  
