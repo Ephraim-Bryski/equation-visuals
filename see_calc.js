@@ -1165,8 +1165,8 @@ function make_line(eqn){
     var input = eqn.input
     input = input.replaceAll("\\ ","")
 
-    // in_field.temp_ltx = remove_char_placeholders(input) // just to store it temporarily cause mq is annoying about 
-    MQ(in_field).latex(remove_char_placeholders(input))
+    in_field.temp_ltx = remove_char_placeholders(input) // just to store it temporarily cause mq is annoying about 
+    // MQ(in_field).latex(remove_char_placeholders(input))
     var display_eqns = eqn.result
     var show_output = eqn.show_output
 
@@ -2493,14 +2493,14 @@ function make_MQ(){
     })
 
 
-    // const in_fields = [...$(".line-input")]
+    const in_fields = [...$(".line-input")]
 
-    // in_fields.forEach(field => {
+    in_fields.forEach(field => {
 
-    //     let ltx = field.temp_ltx
-    //     MQ(field).latex(ltx)
-    //     return
-    // })
+        let ltx = field.temp_ltx
+        MQ(field).latex(ltx)
+        return
+    })
 
 }
 
