@@ -46,10 +46,10 @@ addEventListener("resize",e => {
 
 var SoEs= [
     {
-        name:"A",
+        name:"",
         info: "hi",
         eqns: [
-            {input: "a+b=2"},
+            {input: ""},
         ]
     },
 
