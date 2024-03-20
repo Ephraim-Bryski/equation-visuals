@@ -139,6 +139,7 @@ function remove_those_spinners(){
 
 document.addEventListener('keyup', (e)=>{
 
+    $("#save-field-error-msg")[0].innerText = ""
 
     var in_field=document.activeElement
 
@@ -348,7 +349,7 @@ function save_sheet(){
         }
         place_to_save = firebase_data.Users[CURRENT_USER]
     }else{
-        place_to_save = get_folder_content(folder_path.join("/"),firebase_data.Library)
+        place_to_save = get_folder_content(folder_path.join("/").replaceAll("-"," "),firebase_data.Library)
     }
 
 
@@ -416,8 +417,6 @@ function update_library(package = null){
     }else{
 
         user_data = firebase_data.Users[CURRENT_USER]
-        $("#user-content-label")[0].innerText = `${CURRENT_USER}'s Content`
-        
     }
 
 
@@ -712,10 +711,11 @@ function create_sheet_buttons(all_names, container, owner){
     }
 
 
-    container.appendChild(delete_btn)
-
-    container.appendChild(cancel_delete_btn)
-    container.appendChild(really_delete_btn)
+    if (owner){
+        container.appendChild(delete_btn)
+        container.appendChild(cancel_delete_btn)
+        container.appendChild(really_delete_btn)
+    }
 
     container.appendChild(load_btn)
 };
@@ -1492,8 +1492,12 @@ function make_solve_block(){
     
 
     const toggle_solve_steps_field = document.createElement("button")
-    toggle_solve_steps_field.style.display = 'block'
+    toggle_solve_steps_field.id = "toggle-solve-steps"
     toggle_solve_steps_field.innerText = show_steps_text
+    if (has_error){
+        toggle_solve_steps_field.style.display = 'none'
+    }
+    
     block.appendChild(toggle_solve_steps_field)
     
     
@@ -1932,7 +1936,7 @@ let n_since_spinner_pressed = null
 
 
 
-setInterval(check_spinner_pressed,1)
+setInterval(check_spinner_pressed,10)
 
 
 function check_spinner_pressed(){
@@ -2279,7 +2283,8 @@ function make_sub_table(table_data, solve_result, is_solve_line){
 
 			var remove = document.createElement("button")
             remove.classList.add("table-remove")
-			remove.innerText = "X"
+            remove.innerText = "X"
+            
 			remove.onclick = (e)=>{
                 change_start_idx($(e.target).parents(".block").index())
 
@@ -2293,11 +2298,13 @@ function make_sub_table(table_data, solve_result, is_solve_line){
 
             if (is_solve_line){
                 clear.classList.add("solve-table-clear")
+                clear.innerText = "Clear output"
             }else{
                 clear.classList.add("table-clear")
+                clear.innerText="X"
             }
             
-			clear.innerText="X"
+            
 			clear.onclick = (e)=>{
                 
                 $("#spinner-row")[0].style.display = 'none'

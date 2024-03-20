@@ -126,7 +126,7 @@
      
 
 
-    <button style="float: right" class="menu-text" onclick="toggle_about(event)">About</button>
+    <button style="float: right" class="menu-text" onclick="toggle_about(event)">Help</button>
 
 
 
@@ -143,16 +143,19 @@
 
 
     <div class="library-label" id="user-content-label">User Content</div>
-    <button id="sign-in" onclick="signInWithGoogle()" >Sign in with Google</button>
+    <button id="sign-in" class="sign-in-out"  onclick="signInWithGoogle()" >Sign in with Google</button>
+    <button id="sign-out" class="sign-in-out" onclick="signOutUser()"  style="display: none;">Log Out</button>
 
     <br>
     <input style="height:100%" id="save-field" pattern="[A-Za-z]+" placeholder="Sheet name">
-    <button  onclick="save_sheet()" id="save-sheet-btn" id="save-button">Save</button>
+    <button  onclick="save_sheet()" id="save-sheet-btn">Save</button>
     <br>
     <span id="save-field-error-msg" ></span>
 
-    <div class="library-label">Examples</div>
+    <div style="height: 10px;"></div>
     <div id="user-content">Loading library...</div>
+
+    <div class="library-label">Examples</div>
 
     <div id="public-content"></div>
     
@@ -170,10 +173,11 @@
     These equations can then be connected to visuals to create interactive graphics with physical relations. See the library for examples.
   </div>
   <div class="library-label">Commands</div>
-  <div style="line-height: 1.5;">
+  <div style="line-height: 1.75;">
 
+    <div><span class="command-box">Ctrl</span> + <span class="command-box">Enter</span>: Run sheet</div>
     <div><b>\theta</b> + <span class="command-box">space</span>: θ (same for all greek letters)</div>
-    <div><b>visual</b> followed by the name of a visual <br>&emsp;(e.g. "Box", "Sphere", "Cylinder")</div>
+    <div><b>visual</b> followed by the name of a visual <br>&emsp;(e.g. "Box", "Sphere", "Cylinder","Arrow")</div>
   </div>
   <div class="library-label">Navigating Graphics</div>
   <div style="line-height: 1.75;">

@@ -551,7 +551,7 @@ function compute_sub_table(eqns, old_table, for_solving = false,default_vis_vals
             removed_vars.forEach(remove_var => {
                 if(sub_out.includes(remove_var)){
                     //VAR
-                    throw new FormatError(`Variable ${remove_var} is being removed but is also a substitution output, not allowed`)
+                    throw new FormatError(`Variable ${remove_char_placeholders(remove_var)} is being removed but is also a substitution output, not allowed`)
                 }
             })
             
@@ -587,7 +587,7 @@ function compute_sub_table(eqns, old_table, for_solving = false,default_vis_vals
                 }
 
                 if (is_color_cell && !is_valid_color(sub_cell)){
-                    throw new FormatError(`${var_cell} must either be a variable with color in it or be one of: ${colors.join(", ")}`)
+                    throw new FormatError(`${remove_char_placeholders(var_cell)} must either be a variable with color in it or be one of: ${colors.join(", ")}`)
                 }
 
                 if (!is_color_cell && sub_cell.includes("color")){

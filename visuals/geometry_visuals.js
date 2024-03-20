@@ -27,7 +27,8 @@ const draw_cylinder = {
         "x_2":1,
         "y_2":0,
         "z_2":0,
-        "r":1},
+        "r":1,
+    },
     
     vis: (inp)=>{
 
@@ -233,6 +234,7 @@ const draw_ramp = {
 
     vars: {
         x_0:0,
+        y_0:0,
         z_0:0,
         L:2,
         H:1,
@@ -249,8 +251,8 @@ const draw_ramp = {
         ]  
 
         const path = [
-            vec(inp.x_0, 0, inp.t),
-            vec(inp.x_0, 0, -inp.t)
+            vec(inp.x_0, inp.y_0, inp.t),
+            vec(inp.x_0, inp.y_0, 0)
         ]
 
         extrusion({

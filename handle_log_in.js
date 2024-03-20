@@ -25,28 +25,44 @@ firebase_log_in.initializeApp(fb_config_log_in);
 // Check if the user is already logged in on page load
 firebase_log_in.auth().onAuthStateChanged(function(user) {
 	if (user) {
+		console.log("LOGGED IN")
+		$("#sign-in")[0].style.display = "none"
+		$("#save-field")[0].style.display = ""
+		$("#save-sheet-btn")[0].style.display = ""
+		$("#sign-out")[0].style.display = ""
+		$("#save-field-error-msg")[0].style.display = ""
+		CURRENT_USER = user.email.split("@")[0]
+		console.log(CURRENT_USER)
+		$("#user-content-label")[0].innerText = `${CURRENT_USER}'s Content`
+
 		// User is signed in
 		// screw it, what's the chance two people will have the same email with different domains
 		// it would be weird to show people's full email address in the url	
-		CURRENT_USER = user.email.split("@")[0]
 
-		$("#sign-in")[0].style.display = "none"
-		$("#save-field")[0].style.display = ""
-		$("#save-button")[0].style.display = ""
-		$("#sign-out")[0].style.display = ""
+
 		console.log("IN :D")
 		console.log(user.email);
 
 		// Do something with the logged-in user, e.g., display user info
 	} else {
+		console.log("LOGGED OUT")
 		CURRENT_USER = null
 		// $("#sign-out")[0].style.display = "none"
 		$("#sign-in")[0].style.display = ""
+		
+		// just need to uncomment this
+		$("#save-field")[0].style.display = "none"
+		$("#save-sheet-btn")[0].style.display = "none"
+		$("#save-field-error-msg")[0].style.display = "none"
+		
+		
 		// just temporary so i can save stuff without logging in
 		// $("#save-field")[0].style.display = "none"
 		// $("#save-button")[0].style.display = "none"
 		// No user is signed in
 		console.log("User is not logged in");
+		$("#user-content-label")[0].innerText = "User Content"
+		$("#sign-out")[0].style.display = "none"
 	}
 
 
@@ -63,6 +79,7 @@ function signOutUser() {
 	firebase_log_in.auth().signOut().then(function() {
 		// Sign-out successful.
 		console.log("User signed out");
+
 		// Perform any additional actions after sign-out if needed
 	}).catch(function(error) {
 		// An error happened.
@@ -79,7 +96,8 @@ function signInWithGoogle() {
 	firebase_log_in.auth().signInWithPopup(provider).then(function(result) {
 		// User signed in successfully
 		var user = result.user;
-		console.log(user.email);
+		console.log(user);
+
 
 	}).catch(function(error) {
 		// Handle errors

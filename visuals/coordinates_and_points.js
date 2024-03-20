@@ -37,6 +37,20 @@ const draw_coordinate_3d = {
     }
 }
 
+const draw_label = {
+    name: "Label",
+    vars: {
+        x: 0,
+        y: 0,
+        z: 0,
+        text: '"some text"'
+    },
+    vis: (inp) => {
+        const pos = vec(inp.x,inp.y,inp.z)
+        label({pos: pos, text: inp.text, opacity: 1, box: false})
+    }
+}
+
 
 const draw_axes_2d ={
     name: "Axes2D",
@@ -162,7 +176,7 @@ function draw_axes(origin,texts,lengths){
 
 }
 
-
+vis_blocks.push(draw_label)
 vis_blocks.push(draw_coordinate_2d)
 vis_blocks.push(draw_coordinate_3d)
 vis_blocks.push(draw_axes_2d)

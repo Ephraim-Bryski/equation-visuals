@@ -40,6 +40,7 @@ const draw_planetary = {
 
     const R_ring = R_s+R_p*2
     const R_case = R_s+R_p
+    const planetary_length = 0.1
     make_gear(x,y,z,R_s,angle_s,color_s, planetary_length)
     make_ring_gear(x,y,z,R_ring,angle_r,color_r, planetary_length)
 
@@ -79,7 +80,7 @@ const draw_planetary = {
             const x2 = x+outer_R*Math.cos(angle)
             const y2 = y+outer_R*Math.sin(angle)    
             const z_F = z
-            const z_B = z+gear_depth
+            const z_B = z+planetary_length
             curve({pos:[vec(x1,y1,z_F),vec(x2,y2,z_F)],color:spoke_color})
             curve({pos:[vec(x1,y1,z_B),vec(x2,y2,z_B)],color:spoke_color})
             curve({pos:[vec(x1,y1,z_F),vec(x1,y1,z_B)],color:spoke_color})

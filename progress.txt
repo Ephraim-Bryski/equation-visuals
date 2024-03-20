@@ -12,15 +12,11 @@ CAS issues i'm saying fuck it for
 	WHY CANT SOLVE sheet (truss example), only issue when you shift the top two nodes vertically, there is too much unknown, not sure why
 
 
+should remove "Sheet saved" after typing
 
-confirmation on save
-
-
-bring back the thing to MQify at the end
 
 visual ramp could instead be derived from triangular prism primitive
 
-Run sheet should be gray and blue on hover
 
 water wave showing forces on columns and conservation of mass
 
@@ -33,28 +29,9 @@ bugs
 		there are actually still bugs but i dont fucking care
 
 
-call Library Examples, call About Help
-in Help, go over shortcuts
-	math field
-		visual
-		\theta
-	visual
-		pan
-		orbit
-	navigation
-		enter to create new (shift+enter for block)
-		navigate holding control and arrow keys
-		delete with ctrl+del (ctrl+shift+del for block)
-		swap with alt and arrow? (alt+shift and arrow for block)
-
 shortcuts
 
-resizing gs canvas, sooo annoying
-	updating size of canvas: leads to gs errors when creating new object
-	recreating canvas: before it worked but now it causes it to crash, don't know why
 
-
-"Clear output" instead of "x" for solve (less scary)
 
 wheel in arbitrary orientation
 	can use instead of bevel for the differential (would actually be clearer)

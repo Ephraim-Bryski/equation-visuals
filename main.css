@@ -43,6 +43,19 @@ body{
 
 }
 
+#toggle-solve-steps{
+    display: block;
+    border:none;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    color: gray;
+}
+
+#toggle-solve-steps:hover{
+    color:black;
+}
+
 #OLD-solve-steps{
     /* general window for variable tracking, showing steps, library etc. */
     position:absolute;
@@ -99,6 +112,7 @@ body{
 #save-field-error-msg{
     font-family: "Arial", Arial, sans-serif;
 
+
 }
 
 #top-menu {
@@ -149,7 +163,9 @@ body{
     
 }
 
-
+#toggle-blocks {
+    width: 150px;
+}
 
 #pretty{
     color:lightgray;
@@ -189,7 +205,7 @@ body{
 .table-add:hover .tooltip {display: block;--tooltip-text:"Create new row";}
 .table-remove:hover .tooltip {display: block;--tooltip-text:"Delete row";}
 .table-clear:hover .tooltip {display: block;--tooltip-text:"Clear row";}
-.solve-table-clear:hover .tooltip {display: block;--tooltip-text:"Clear output";}
+/*.solve-table-clear:hover .tooltip {display: block;--tooltip-text:"Clear output";}*/
 .table-copy:hover .tooltip {display: block;--tooltip-text:"Duplicate row";}
 
 .tooltip {
@@ -314,18 +330,25 @@ cursor: pointer;
 }
 
 
+#library {
+    width: 225px;
+}
 
-#sign-in {
+#save-field {
+    margin-top:15px;
+}
+
+.sign-in-out {
     border: none;
     background-color: transparent;
     cursor: pointer;
     font-weight: bold;
     color: gray;
     text-decoration: underline dotted;
-    padding-bottom: 15px;
+    padding-top: 10px;
 }
 
-#sign-in:hover {
+.sign-in-out:hover {
     
     text-decoration: underline;
 }

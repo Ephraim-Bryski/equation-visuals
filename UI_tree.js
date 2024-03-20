@@ -65,8 +65,8 @@ function change_content_order(trees, directory, name, name_to_go_before){
 
     const to_index = indices.filter(idx => {return siblings[idx].name === name_to_go_before})[0]
 
-    if (!to_index){
-        throw `${name_to_go_after} is not a sheet name`
+    if (to_index === undefined){
+        throw `${name_to_go_before} is not a sheet name`
     }
 
     siblings.splice(from_index,1)
