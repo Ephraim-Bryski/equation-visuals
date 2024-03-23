@@ -72,7 +72,7 @@ function send_sheet(sheet,start_idx,end_idx){
     clear_equation_visuals()
     const new_SoEs = calc(sheet,start_idx,end_idx)
     data2DOM(new_SoEs)
-    display_vis(equation_visuals.flat())
+    display_vis(equation_visuals.flat(), false)
 
 }
 
@@ -2231,6 +2231,8 @@ function make_sub_table(table_data, solve_result, is_solve_line){
 
             var cell = document.createElement("td")
 
+            const default_size = 30
+
             if (is_solve_line && not_first_row){
                 let n_digits
                 if (rounded_cell_val && !isNaN(rounded_cell_val)){
@@ -2238,9 +2240,9 @@ function make_sub_table(table_data, solve_result, is_solve_line){
                 }else{
                     n_digits = 0
                 }
-                width = Math.max(n_digits*10+20,50)
+                width = Math.max(n_digits*5+10,40)
             }else{
-                width = 50
+                width = default_size
             }
 
             in_field.style.width = `${width}px`

@@ -167,7 +167,7 @@ function num_to_string(number){
     if (String(number) === "Infinity"){throw new EvaluateError("Infinite value found")}
 
     if (String(number) === "NaN"){
-        throw new EvaluateError("undefined value found")
+        throw new EvaluateError("Undefined value found")
     }
 
     if (typeof number === "string"){return number}
@@ -296,7 +296,7 @@ function take_trig_func(trig_func,value){
     const result = math.evaluate(expression_degree)
 
     if (Math.abs(result.im) > 10 ** -8){
-        throw new EvaluateError("trig function evaluated outside of domain")
+        throw new EvaluateError("Trig function evaluated outside of domain")
     }
 
     return num_to_string(result)    
@@ -489,14 +489,14 @@ function eqn_to_tree(eqn, do_simplification = true){
         const first_op_idx = items.findIndex(char=>arithmetic_ops.includes(char))
 
         if (first_op_idx === -1){
-            throw new FormatError("must have operations between parentheses and numbers/variables")
+            throw new FormatError("Must have operations between parentheses and numbers/variables")
         }
 
         const term1 = items.slice(0,first_op_idx)
         const term2 = items.slice(first_op_idx+1)
 
         if (term1.length === 0 || term2.length === 0){
-            throw new FormatError("equation contains syntax error")
+            throw new FormatError("Equation contains syntax error")
         }
 
         const op_char = items[first_op_idx]
@@ -967,7 +967,7 @@ function simplify_arithmetic(tree){
 
     
     if (tree.op === "^" && tree.terms[0] === "0" && Number(tree.terms[1]) <= 0){
-        throw new EvaluateError("cannot raise 0 to a negative exponent")
+        throw new EvaluateError("Infinite value found")
     }
     
 
@@ -992,7 +992,7 @@ function simplify_arithmetic(tree){
         if (tree.terms.every(is_number)){
             const new_value = take_exponent(tree.terms[0], tree.terms[1])
             if (isNaN(new_value) && !is_fraction(new_value)){
-                throw new EvaluateError("imaginary value found")
+                throw new EvaluateError("Imaginary value found")
             }
             return num_to_string(new_value)
         }else if (tree.op === tree.terms[0].op){ // (a^b)^c --> a^(b*c)
@@ -1368,7 +1368,7 @@ function remove_top_ops(tree){
     const result = math.evaluate(expression)
 
     if (result === Infinity){
-        throw new EvaluateError("infinite value found")
+        throw new EvaluateError("Infinite value found")
     }
 
     const inverse_result = num_to_string(-result)

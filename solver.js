@@ -79,7 +79,7 @@ function remove_vars(SoEs, vars_to_remove){
         const in_nonvisual_eqns = nonvisual_vars.includes(remove_var)
 
         if (in_visual_eqns){
-            throw new FormatError("variables removed from visual, should this be a too much unknown error?")
+            throw new FormatError("Too much unknown to solve system")
         }
         if (in_nonvisual_eqns){
             throw "this doesnt make sense, variables should have been removed"

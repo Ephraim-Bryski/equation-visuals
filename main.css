@@ -115,6 +115,11 @@ body{
 
 }
 
+.mq-root-block{
+    font-size: 12px;
+}
+
+
 #top-menu {
     pointer-events: auto;
     width:100%;
@@ -129,9 +134,9 @@ body{
     color:lightgray;
     font-family: "Arial", Arial, sans-serif;
     font-weight: bold;
-    font-size:15px;
-    padding-top:15px;
-    padding-bottom:15px;
+    font-size:13px;
+    padding-top:13px;
+    padding-bottom:13px;
 }
 
 
@@ -141,6 +146,8 @@ body{
 
     
 }
+
+
 
 .menu-symbol{
     height: 100%;
@@ -164,7 +171,7 @@ body{
 }
 
 #toggle-blocks {
-    width: 150px;
+    width: 140px;
 }
 
 #pretty{
@@ -336,6 +343,7 @@ cursor: pointer;
 
 #save-field {
     margin-top:15px;
+    width:150px
 }
 
 .sign-in-out {

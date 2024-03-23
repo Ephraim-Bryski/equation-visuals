@@ -231,11 +231,11 @@ function calc(SoEs,start_idx,end_idx){
 
 
         if (has_visual_txt && !visual_line){
-            throw new FormatError("visual keyword must be at the start of the line")
+            throw new FormatError("Visual keyword must be at the start of the line")
         }
 
         if (has_multiple_visual_texts){
-            throw new FormatError("visual keyword must only occur once")
+            throw new FormatError("Visual keyword must only occur once")
         }
 
 
@@ -288,7 +288,7 @@ function calc(SoEs,start_idx,end_idx){
             // if i wanted to list all the visuals in the error message
             // const vis_blocks_text = vis_blocks.map(block => {return block.name}).join("<br> ")
             if (line === ""){
-                throw new FormatError(`visual must be followed by the name of a primitive visual`)
+                throw new FormatError(`Visual must be followed by the name of a primitive visual`)
             }
 
             if (match_vis_blocks.length === 0){
@@ -583,7 +583,7 @@ function compute_sub_table(eqns, old_table, for_solving = false,default_vis_vals
 
 
                 if (is_visual && sub_cell === ""){
-                    throw new FormatError("cannot have an empty cell for a visual")
+                    throw new FormatError("Cannot have an empty cell for a visual")
                 }
 
                 if (is_color_cell && !is_valid_color(sub_cell)){

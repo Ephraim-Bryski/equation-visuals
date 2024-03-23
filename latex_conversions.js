@@ -130,7 +130,7 @@ function do_other_syntax_checks(latex_expression){
 		const without_parentheses = non_parentheses_trig.test(latex_expression) || latex_expression.endsWith(op)
 
 		if (without_parentheses){
-			throw new FormatError("trig function input must be enclosed in parentheses")
+			throw new FormatError("Trig function input must be enclosed in parentheses")
 		}
 
 	})
@@ -167,7 +167,7 @@ function ltx_to_math(ltx_eqn){
 	const invalid_var = /[^a-zA-Z0-9_][0-9][a-zA-Z_]/;
 	const invalid_var_start = /^[0-9][a-zA-Z_]/;
 	if (invalid_var.test(eqn) || invalid_var_start.test(eqn)){
-		throw new FormatError("cannot start a variable with a number")
+		throw new FormatError("Cannot start a variable with a number")
 	}
 
 		
