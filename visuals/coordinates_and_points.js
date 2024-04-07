@@ -47,7 +47,7 @@ const draw_label = {
     },
     vis: (inp) => {
         const pos = vec(inp.x,inp.y,inp.z)
-        label({pos: pos, text: inp.text, opacity: 1, box: false})
+        label({pos: pos, text: inp.text.replaceAll('"',''), opacity: 1, box: false})
     }
 }
 
