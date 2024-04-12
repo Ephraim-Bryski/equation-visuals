@@ -41,8 +41,9 @@ body{
     
     height:90vh;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     direction: rtl;
+    scrollbar-width: none;
 }
 
 
