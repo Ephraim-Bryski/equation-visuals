@@ -21,7 +21,6 @@ const MQ_table_parameters = {
 
 addEventListener("resize",e => {
     
-    console.log('boop')
     const old_range = scene.range
     const old_axis = scene.axis
     const old_center = scene.center
@@ -482,7 +481,6 @@ function write_url(owner, path_split){
 }
 
 function send_to_url(){
-    console.log('loading    ')
     const target = window.location.hash.substring(1);
     if (!target) {return}
     const stuff = target.split("|")
@@ -730,7 +728,6 @@ function package_firebase(sheets){
         return {name: sheet_name, blocks: sheet_content}
     })
 
-    console.log(JSON.stringify(new_sheets))
 
     download(JSON.stringify(new_sheets),"boop.json","text/plain")
 }
@@ -1317,7 +1314,6 @@ function format_visual_eqn(eqn){
     }
     const values = parts[0].split("|")
     if (values.length === 7 && eqn.includes("Arrow")){
-        console.log("FUCK THIS")
         values.push('"w"')
     }
     const visual_name = parts[1]
@@ -2534,7 +2530,6 @@ function copy(stuff){
 
 
 function my_check(){
-    console.log(hist_idx)
     hist_doms.forEach(dom => {try{console.log(dom[0][1].eqns[0].input)}catch{console.log('')}})
 }
 
@@ -2725,15 +2720,12 @@ function search_for_vars(){
         if ($(".search-sel")[1].innerText!==var_name){throw "didnt switch class properly??"}
     
         var fields = mapped_fields[block_name][var_name]
-        console.log(fields)
     
     
     
         mapped_fields[block_name][var_name].forEach((field)=>{
-            console.log(field)
             field.classList.add("field-sel")
         })
-        console.log(mapped_fields)
     
     }
     

@@ -136,7 +136,6 @@ function solve_eqns(SoEs){
     
     const all_solved = vars_to_remove.every(remove_var => {return solve_vars.includes(remove_var)})
     if (!all_solved){
-        console.log("check this")
         throw new TooMuchUnknownError
     }
 
@@ -652,7 +651,6 @@ function has_infinite_solutions(exp_ltx){
         }
     }
 
-    console.log("numeric solve infinite solutions found")
 
     return true
 
@@ -917,7 +915,7 @@ function newton_raphson(exp,solve_var,guess){
     
     if (real_comp === Infinity || real_comp === -Infinity){throw new NumericSolveError("Solution is infinite")}
 
-    console.log(`iterations: ${iter_count}`)
+    // console.log(`iterations: ${iter_count}`)
     return num_to_string(real_comp)
 
     

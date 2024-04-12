@@ -32,7 +32,6 @@ function signInWithGoogle() {
   firebase_log_in.auth().signInWithPopup(provider).then(function(result) {
     // User signed in successfully
     var user = result.user;
-    console.log(user.email);
     //alert(`logged in as ${user.email}`)
   }).catch(function(error) {
     // Handle errors
@@ -74,7 +73,6 @@ function update_library(package = null){
     if (package !== null){
         const data = package.val()
         firebase_data = data //Object.values(data)  
-        console.log(firebase_data)
     }
   }
 </script>

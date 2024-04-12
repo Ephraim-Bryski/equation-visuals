@@ -145,7 +145,6 @@ function construct_fraction(num,den){
 
     if (reduced_den === 1 ){
         if (reduced_den === -1){
-            console.log("HI")
         }
         return num_to_string(reduced_num / reduced_den)
     }else{
@@ -1338,7 +1337,6 @@ const test_it = eqn => {
 
     const grouped = group_common_terms(test_tree)
     
-    console.log(tree_to_expression(grouped))
     
 }
 
