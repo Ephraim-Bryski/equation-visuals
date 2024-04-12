@@ -212,10 +212,12 @@ function get_input_fields(){
 }
 
 function undo(){
+    return
     step_DOM_history(history_stack, future_stack)
 }
 
 function redo(){
+    return
     step_DOM_history(future_stack, history_stack)   
 }
 
