@@ -31,14 +31,19 @@ body{
     background-color: transparent;
     pointer-events: none;
     z-index: 2;
-    height:90vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scrollbar-width: none;
+    direction: ltr;
+
 
 }
 
 
+#scroller {
+    
+    height:90vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    direction: rtl;
+}
 
 
 #vis{
