@@ -123,12 +123,12 @@
 
     <button  class="menu-text visual-toggle" onclick="view_xy()" style="display:none">Reset View</button>
     
-    <button  style="float:right" class="menu-text menu-text-selected" onclick="toggle_library(event)">Library</button>
+    <button  style="float:right" class="menu-text " onclick="toggle_library(event)">Library</button>
     
      
 
 
-    <button style="float: right" class="menu-text" onclick="toggle_about(event)">Help</button>
+    <button style="float: right" class="menu-text menu-text-selected" onclick="toggle_about(event)">Help</button>
 
 
 
@@ -139,7 +139,7 @@
 <div id="OLD-solve-steps"  style="display: none;"></div>
 
 
-<div id="library" class="popup" style="display:block">
+<div id="library" class="popup" style="display:none">
     
 
 
@@ -165,9 +165,29 @@
 
 
 
+<div id="about" class="popup" style="display: block">
 
-<div id="about" class="popup" style="display: none;">
 
+  <span>
+
+    <div class="library-label" id="tutorial-name"></div>
+
+    <div class="center-container"style="margin-top:10px">
+      <button id="tutorial-back" class="tutorial-button">◀</button>
+      <button id="tutorial-forward" class="tutorial-button">▶</button>
+  </div>
+
+  <div id="tutorial-stage" class="center-container" style="margin-bottom:10px">
+    
+  </div>
+  </span>
+  
+  
+  
+  <div id="tutorial" style="width:300px;line-height:1.5"></div>
+
+  
+  <!--
   <div class="library-label">About the site</div>
   <div style="width:300px; line-height: 1.25;">
     
@@ -189,7 +209,8 @@
   </div>
 
   
-  <textarea id="about-field" style="resize: none;width:90%;height:200px;display: none;"></textarea>
+-->
+<textarea id="about-field" style="resize: none;width:90%;height:200px;display: none;"></textarea>
 
 </div>
 

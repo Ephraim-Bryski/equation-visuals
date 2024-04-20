@@ -183,6 +183,36 @@
     cursor: pointer;
 }
 
+
+
+.center-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+
+.tutorial-button{
+    border:none;
+    background-color: white;
+    color: lightgray;
+    font-size:14px;
+    margin:0px;
+    padding:0px;
+
+ 
+}
+
+.hoverable{
+    color:gray
+}
+.hoverable:hover{
+    cursor:pointer;
+    color:black;
+}
+
 .solve-spinner{
     border:none;
     background-color: white;

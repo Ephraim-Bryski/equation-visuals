@@ -18,6 +18,128 @@ const MQ_table_parameters = {
 
 
 
+/*
+
+
+eqns
+
+eqns with solve
+
+eqns with solve input adjust
+
+basic visual (with volumn equation)
+
+copy visual
+
+*/
+
+
+const tutorial_stuff = [
+    {
+        name: 'Overview',
+        text: 'This site solve systems of equations. You can use simple systems as building blocks to create more complex systems. These equations can then be connected to visuals to create interactive graphics.',
+        sheet: [{"name":"","show_box":"","info":"hi","eqns":[{"input":"","show_output":""}],"display":""}],
+        solve: {"reference":"","step_sizes":{}}
+
+    },
+
+    {
+        name: "System of Equations",
+        text: "Each block contains a system of equations, with its name on top, and one equation per line below.",
+        sheet: [
+            {"name":"SomeName","show_box":"","info":"hi",
+            "eqns":[
+                {"show_output":"none","input":"y=x+3"},
+                {"show_output":"none","input":"x\\cdot y=10"}],"display":""}],
+        solve: {"reference":"","step_sizes":{}}
+        
+    },
+    {
+        name: "Solving Systems",
+        text: "To solve the system, reference the block's name in the solve line. Always rerun the sheet (<span class='command-box'>Ctrl</span> + <span class='command-box'>Enter</span>) to see the results.",
+        sheet: [
+            {"name":"SomeName","show_box":"","info":"hi",
+            "eqns":[
+                {"show_output":"none","input":"y=x+3"},
+                {"show_output":"none","input":"x\\cdot y=10"}],"display":""}],
+        
+        solve: {"reference":"SomeName","step_sizes":{},"table":{"data":[["x","y"],["2.275","5.275"]],"output_solve_idxs":[[1,0],[1,1]]}}
+    },
+
+    {
+        name: "Adjusting Values",
+        text: "If there are too many unknowns to solve the system, values can be substituted into the table and adjusted with the spinner. Press <b>Clear output</b> to change the variables to substitute.",
+        sheet: [
+            {"name":"SomeName","show_box":"","info":"hi",
+            "eqns":[
+                {"show_output":"none","input":"y=x+3"},
+                {"show_output":"none","input":"x\\cdot y=z"}],"display":""}],
+        
+        solve: {"reference":"SomeName","step_sizes":{},"table":{"data":[["x","y","z"],["","","10"]],"output_solve_idxs":[]},"steps":{"sub":[["x\\cdot y=z","x \\cdot y=(10)"]],"back":[{"eqn0":"x\\cdot y=10","sol":"\\frac{10}{y}","solve_var":"x","substitutions":[{"eqn0":"y=x+3","eqn_subbed":"y=\\frac{10}{y}+3"}]},{"eqn0":"y=\\frac{10}{y}+3","sol":"5","solve_var":"y","substitutions":[]}],"forward":[{"eqn":"x=\\frac{10}{5}","sol":"x=2"}]},"previous_back_solution":{"remaining_trees":[],"ordered_sub":[{"solve_var":"y","sol":"5"},{"solve_var":"x","sol":"2"}],"steps":[{"eqn0":"x\\cdot y=10","sol":"\\frac{10}{y}","solve_var":"x","substitutions":[{"eqn0":"y=x+3","eqn_subbed":"y=\\frac{10}{y}+3"}]},{"eqn0":"y=\\frac{10}{y}+3","sol":"5","solve_var":"y","substitutions":[]}]},"solved_table":[["y","x","z"],["","","10"]],"result":[["y=5","x=2"]]}
+    },
+
+    {
+        name: "Visuals",
+        text: "To create a visual, type the <b>visual</b> keyword followed by the name of a visual (e.g. 'Box', 'Sphere', 'Cylinder', or 'Arrow').<br><br><span class='command-box'>Ctrl</span> + <span class='command-box'>Click</span> to orbit<br><span class='command-box'>Shift</span> + <span class='command-box'>Click</span> to pan.<br><br>To write π, type <b>\\pi</b> + <span class='command-box'>space</span> <br>(It's the same for all greek letters).",
+        sheet: [{"name":"SphereVol","show_box":"","info":"hi","eqns":[{"show_output":"none","input":"V=\\frac{4}{3}\\cdotBS__pi\\cdot R^3"},{"show_output":"none","input":"\\operatorname{visual}Sphere","sub_table":{"data":[["r","x_0","y_0","z_0"],["R","0","0","0"]],"output_solve_idxs":[]}}],"display":""}],
+        solve: {"reference":"SphereVol","step_sizes":{},"table":{"data":[["R","V","BS__pi"],["","10",""]],"output_solve_idxs":[]},"steps":{"sub":[["V=4.188790204786390525271144724684\\cdot R^{3}","(10)=4.188790204786390525271144724684 \\cdot R^{3}"]],"back":[{"eqn0":"10=4.188790204786390525271144724684\\cdot R^{3}","sol":"1.336504617571975916945348217268","solve_var":"R","substitutions":[]}],"forward":[]},"previous_back_solution":{"remaining_trees":["(0)|(0)|(0)|((1.336504617571975916945348217268))|VISUALSphere"],"ordered_sub":[{"solve_var":"R","sol":"1.336504617571975916945348217268"}],"steps":[{"eqn0":"10=4.188790204786390525271144724684\\cdot R^{3}","sol":"1.336504617571975916945348217268","solve_var":"R","substitutions":[]}]},"solved_table":[["V","R"],["10",""]],"result":[["R=1.336504617571975916945348217268"]]}
+        
+    },
+    {
+        name: "Rerencing Blocks",
+        text: "Blocks can be referenced by blocks below, inserting their equations in. You can substitute variables using the cells of table, and each row creates a copy. Press the arrow to the right of the table to see the inserted equations.<br><br>You can show only the solve spinners by pressing <b>Hide Equations</b> up top.<br><br>Go to the library to see how all of this is used for practical examples.",
+        sheet: [{"name":"SphereVol","show_box":"","info":"hi","eqns":[{"show_output":"none","input":"V=\\frac{4}{3}\\cdotBS__pi\\cdot R^2"},{"show_output":"none","input":"\\operatorname{visual}Sphere","sub_table":{"data":[["r","x_0","y_0","z_0"],["R","x","0","0"]],"output_solve_idxs":[]}}],"display":""},{"name":"TwoSpheres","show_box":"","eqns":[{"show_output":"none","input":"SphereVol","sub_table":{"data":[["R","V","x"],["R","V_1","0"],["R","V_2","10"]],"output_solve_idxs":[]}},{"show_output":"none","input":"V_OB__totCB__=V_1+V_2"}],"display":""}],
+        solve: {"reference":"TwoSpheres","step_sizes":{"V_{tot}":"0.1"},"table":{"data":[["R","V_1","V_2","V_OB__totCB__"],["1.197","6","6","12"]],"output_solve_idxs":[[1,0],[1,1],[1,2]]}}
+    }
+]
+
+let tutorial_idx = 0
+/*
+
+buttons to go back and forward have to change the element
+oh just change the text of course
+*/
+const tutorial_btns = [...$(".tutorial-button")]
+
+$("#tutorial-back")[0].onclick = ()=>{
+    if (tutorial_idx===0){return}
+    tutorial_idx--
+    update_tutorial()
+    if (tutorial_idx===0){
+        tutorial_btns[0].classList.remove("hoverable")}
+}
+
+
+$("#tutorial-forward")[0].onclick = ()=>{
+    if (tutorial_idx+1===tutorial_stuff.length){return}
+
+    tutorial_idx++
+    update_tutorial()
+
+    if (tutorial_idx+1===tutorial_stuff.length){
+        tutorial_btns[1].classList.remove("hoverable")}
+}
+
+
+
+function update_tutorial(){
+    const tutorial_stage = tutorial_stuff[tutorial_idx]
+    $("#tutorial")[0].innerHTML = tutorial_stage.text
+    $("#tutorial-name")[0].innerText = tutorial_stage.name
+    tutorial_btns.forEach(btn => btn.classList.add("hoverable"))
+    $("#tutorial-stage")[0].innerText = `${tutorial_idx+1}/${tutorial_stuff.length}`
+
+    if (tutorial_idx !== 0){
+
+        if (tutorial_stage.solve){
+
+            GLOBAL_solve_stuff = tutorial_stage.solve
+        }
+        const sheet_data =JSON.parse(JSON.stringify(tutorial_stage.sheet))
+        send_sheet(sheet_data,0,sheet_data.length)
+
+    }
+}
 
 addEventListener("resize",e => {
     
@@ -30,7 +152,7 @@ addEventListener("resize",e => {
     
     
 
-    display_vis(equation_visuals)
+    display_vis(equation_visuals,false)
     
 
     scene.range = old_range
@@ -71,12 +193,13 @@ function send_sheet(sheet,start_idx,end_idx){
     clear_equation_visuals()
     const new_SoEs = calc(sheet,start_idx,end_idx)
     data2DOM(new_SoEs)
-    display_vis(equation_visuals.flat(), false)
+    display_vis(equation_visuals.flat(), true)
 
 }
 
 function run_sheet(){
 
+    
     var sheet_data=DOM2data()
     
 
@@ -605,7 +728,7 @@ function load_sheet(all_names, owner){
     
 
 
-    $("#about-field")[0].value = about_text
+    // $("#about-field")[0].value = about_text
 
 
 }
@@ -3131,3 +3254,6 @@ function adjust_scale(){
 }
 
 
+
+update_tutorial()
+tutorial_btns[0].classList.remove("hoverable")
